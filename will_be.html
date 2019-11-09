@@ -1,0 +1,180 @@
+<!doctype html>
+
+<!-- this is begining of the html the browser will process -->
+<html>
+
+<!-- information used by the browser -->
+
+<head>
+
+  <meta charset="utf-8">
+
+  <!-- 
+        displayed anywhere the title is used
+        for the browser, search engines, etc.
+    -->
+  <title>inside out - Brian Savge - will be</title>
+
+  <!--
+        used to display information about the
+        page by search engines and other sites
+        looking at our page.
+    -->
+  <meta name="description" content="inside out is a class project we use to learn html." />
+
+<!-- Latest compiled and minified CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Our global css used in every page -->
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+<!-- Our timeline css used only in the books page -->
+<link href="assets/css/timeline.css" rel="stylesheet" type="text/css">
+</head>
+
+<!-- contnet displayed in the browser window -->
+
+<body>
+
+  <header>
+    <h1><a href="index.php">inside out - will be</a></h1>
+    <h2>continuously falling forward in to the light...</h2>
+    <nav>
+      <ul>
+        <li><a href="love.php">love</a>
+          <ul>
+            <li><a href="things.html">things</a>
+              <ul>
+                <li><a href="music.html">music</a></li>
+                <li><a href="movies.html">movies</a></li>
+                <li><a href="books.html">books</a></li>
+                <li><a href="websites.html">websites</a></li>
+              </ul>
+            </li>
+            <li><a href="people.html">people</a>
+              <ul>
+                <li><a href="family.html">family</a></li>
+                <li><a href="friends.html">friends</a></li>
+                <li><a href="others.html">others</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="who.php">who</a>
+          <ul>
+            <li><a href="i.html">i</a>
+              <ul>
+                <li><a href="was_then.html">was then</a></li>
+                <li><a href="am_now.html">am now</a></li>
+                <li><a href="will_be.html">will be</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="challenges.php">challenges</a>
+          <ul>
+            <li><a href="behind_me.html">behind me</a></li>
+            <li><a href="ahead_of_me.html">a head of me</a></li>
+          </ul>
+        </li>
+        <li><a href="you.php">you</a>
+          <ul>
+            <li><a href="profile.html">profile</a></li>
+            <li><a href="settings.html">settings</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+<div id="content" class="container-fluid">
+  <div class="container">
+    <div class="page-header">
+      <h1 id="timeline">Timeline</h1>
+    </div>
+    <ul class="timeline">
+    </ul>
+  </div>
+</div>
+<div id="loaderDiv"></div>
+  <footer>
+    <h4>this is the footer</h4>
+    <p>we place redundant information here</p>
+    <div id="footerTagLine">I am 7 inches left of normal</div>
+</footer>
+
+<!-- jQuery library --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+
+<!-- Latest compiled JavaScript --> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<script>
+
+window.onload = getTimeLine();
+
+function getTimeLine(curCnt = 0) {
+	var counter = curCnt;
+	var pgbuild = '';
+	var cls = '';
+	var options = {
+		weekday: 'long',
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric'
+	};
+
+	$.ajax({
+		method: 'GET',
+		url: 'https://step-017.inside-out-project.com/wp-json/wp/v2/posts?categories=12&offset=' + curCnt,
+		dataType: 'json',
+		success: function (data) {
+			data.forEach(function (item) {
+
+				
+				var eventDate = new Date('' + item.acf.event_date + ', 00:00:00');
+				
+				var compDate = new Date();
+				var eventDate = new Date('' + item.acf.event_date + ', 00:00:00');
+				compDate.setMonth(compDate.getMonth() - 6);
+				
+				if (eventDate >= compDate) {
+					cls = (cls === 'class="timeline-inverted"') ? '' : 'class="timeline-inverted"';
+
+					var dataDateSort = item.acf.event_date.replace(/-/g, "");
+
+					pgbuild = '<li class="timeline-inverted" data-sortdate="' + dataDateSort + '"><div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div></i></div><div class="timeline-panel"><div class="timeline-heading"><h4 class="timeline-title">' + item.title.rendered + '</h4><p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> ' + eventDate.toLocaleDateString('en-US', options) + '</small></p></div><div class="timeline-body">' + item.content.rendered.slice(0, 250) + '</div></div></li>';
+
+					$(".timeline").append(pgbuild);
+				}
+
+
+			});	
+
+			if (Object.keys(data).length >= 1) {
+				getTimeLine(counter + 10);
+			}else{
+				wrapUp();
+			}
+		},
+		error: function () {
+			console.log('bad');
+		}
+		
+	});
+}
+
+	function wrapUp(){
+	$(".timeline").each(function(){
+    	$(this).html($(this).children('li').sort(function(a, b){
+        	return ($(b).data('sortdate')) < ($(a).data('sortdate')) ? 1 : -1;
+    	}));
+		$(".timeline-inverted:nth-child(odd)").removeClass("timeline-inverted");
+	});
+	
+	$("#loaderDiv").hide(1000);
+}
+	
+	
+</script> 
+
+</body>
+</html>

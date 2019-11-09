@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<!-- this is begining of the html the browser will process -->
+<html>
+   
+    <!-- information used by the browser -->
+    <head>
+        <meta charset="utf-8">
+        
+        <!-- 
+        displayed anywhere the title is used
+        for the browser, search engines, etc.
+        -->
+        <title>
+            inside out - Brian Savge - books
+        </title>
+        
+        <!--
+        used to display information about the
+        page by search engines and other sites
+        looking at our page.
+        -->
+        <meta content="inside out is a class project we use to learn html." name="description">
+        
+		<!-- Our global css used in every page -->
+		<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+
+		<!-- Our books css used only in the books page -->
+		<link href="assets/css/books.css" rel="stylesheet" type="text/css">
+   
+    </head>
+    
+    <!-- contnet displayed in the browser window -->
+    <body>
+        <header>
+            <h1>
+                <a href="index.php">inside out - books</a>
+            </h1>
+            <h2>
+                continuously falling forward in to the light...
+            </h2>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="love.php">love</a>
+                        <ul>
+                            <li>
+                                <a href="things.html">things</a>
+                                <ul>
+                                    <li>
+                                        <a href="music.html">music</a>
+                                    </li>
+                                    <li>
+                                        <a href="movies.html">movies</a>
+                                    </li>
+                                    <li>
+                                        <a href="books.html">books</a>
+                                    </li>
+                                    <li>
+                                        <a href="websites.html">websites</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="people.html">people</a>
+                                <ul>
+                                    <li>
+                                        <a href="family.html">family</a>
+                                    </li>
+                                    <li>
+                                        <a href="friends.html">friends</a>
+                                    </li>
+                                    <li>
+                                        <a href="others.html">others</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="who.php">who</a>
+                        <ul>
+                            <li>
+                                <a href="i.html">i</a>
+                                <ul>
+                                    <li>
+                                        <a href="was_then.html">was then</a>
+                                    </li>
+                                    <li>
+                                        <a href="am_now.html">am now</a>
+                                    </li>
+                                    <li>
+                                        <a href="will_be.html">will be</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="challenges.php">challenges</a>
+                        <ul>
+                            <li>
+                                <a href="behind_me.html">behind me</a>
+                            </li>
+                            <li>
+                                <a href="ahead_of_me.html">a head of me</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="you.php">you</a>
+                        <ul>
+                            <li>
+                                <a href="profile.html">profile</a>
+                            </li>
+                            <li>
+                                <a href="settings.html">settings</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+           
+           <!-- quote in top of page directly below the header element -->
+            <div class="container divQuote">
+                <p class="pQuote">
+                    “The more that you read, the more things you will know. The more that you learn, the more places you’ll go.”
+                </p>
+                <p class="pQuoteAuthor">
+                    ― Dr. Seuss, I Can Read With My Eyes Shut!
+                </p>
+            </div>
+            
+            <!-- begining of our books listing -->
+            <div class="container">
+               
+               
+                <!-- start of Walden by Henry David Thoreau -->
+                <div class="hover panel" onmouseout="javascript:this.className = 'hover panel';" onmouseover="javascript:this.className += ' flip';">
+                    <div class="front">
+                        <div class="frontTitle">
+                            Walden
+                        </div>
+                        <div class="frontLogo walden-thoreau bookBgImg"></div>
+                        <div class="frontLocation">
+                            Henry David Thoreau
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="backTitle">
+                            Walden by Thoreau
+                        </div>
+                        <div class="backParagraph">
+                            First published in 1854, Walden details Thoreau's experiences over the course of two years, two months, and two days in a cabin he built near Walden Pond, amidst woodland owned by his friend and mentor Ralph Waldo Emerson, near Concord, Massachusetts. Thoreau used this time to write his first book, A Week on the Concord and Merrimack Rivers.
+                        </div>
+                        <div class="backGoto">
+                            <a href="https://en.wikipedia.org/wiki/Walden" target="_blank" title="Walden by Henry David Thoreau">Walden by Thoreau →</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of Walden by Henry David Thoreau -->
+                
+                
+                <!-- start of The Catcher in the Rye by J. D. Salinger -->
+                <div class="hover panel" onmouseout="javascript:this.className = 'hover panel';" onmouseover="javascript:this.className += ' flip';">
+                    <div class="front">
+                        <div class="frontTitle">
+                            The Catcher in the Rye
+                        </div>
+                        <div class="frontLogo rye_catcher bookBgImg"></div>
+                        <div class="frontLocation">
+                            J. D. Salinger
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="backTitle">
+                            The Catcher in the Rye by Salinger
+                        </div>
+                        <div class="backParagraph">
+                            The Catcher in the Rye is a 1951 novel by J. D. Salinger. A classic novel originally published for adults, it has since become popular with adolescent readers for its themes of teenage angst and alienation. It has been translated into almost all of the world's major languages. Around 1 million copies are sold each year with total sales...
+                        </div>
+                        <div class="backGoto">
+                            <a href="https://en.wikipedia.org/wiki/The_Catcher_in_the_Rye" target="_blank" title="Walden by Henry David Thoreau">The Catcher... by Salinger →</a>
+                        </div>
+                    </div>
+                </div><!-- end of The Catcher in the Rye by J. D. Salinger -->
+                <!-- start of The Celestine Prophecy by Redfield -->
+                <div class="hover panel" onmouseout="javascript:this.className = 'hover panel';" onmouseover="javascript:this.className += ' flip';">
+                    <div class="front">
+                        <div class="frontTitle">
+                            The Celestine Prophecy
+                        </div>
+                        <div class="frontLogo thecelestineprophecy bookBgImg"></div>
+                        <div class="frontLocation">
+                            James Redfield
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="backTitle">
+                            The Celestine Prophecy by Redfield
+                        </div>
+                        <div class="backParagraph">
+                            The Celestine Prophecy is a 1993 novel by James Redfield that discusses various psychological and spiritual ideas rooted in multiple ancient Eastern traditions and New Age spirituality. The main character undertakes a journey to find and understand a series of nine spiritual insights in an ancient manuscript in Peru...
+                        </div>
+                        <div class="backGoto">
+                            <a href="https://en.wikipedia.org/wiki/The_Celestine_Prophecy" target="_blank" title="The Celestine Prophecy by Redfield">The Celestine... by Redfield →</a>
+                        </div>
+                    </div>
+                </div><!-- end of The Celestine Prophecy by Redfield -->
+            </div>
+            <div class="container">
+                <!-- start of Civil Disobedience by Henry David Thoreau -->
+                <div class="hover panel" onmouseout="javascript:this.className = 'hover panel';" onmouseover="javascript:this.className += ' flip';">
+                    <div class="front">
+                        <div class="frontTitle">
+                            Civil Disobedience
+                        </div>
+                        <div class="frontLogo henry_david_thoreau bookBgImg"></div>
+                        <div class="frontLocation">
+                            Henry David Thoreau
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="backTitle">
+                            Civil Disobedience by Thoreau
+                        </div>
+                        <div class="backParagraph">
+                            Resistance to Civil Government (Civil Disobedience) is an essay by American transcendentalist Henry David Thoreau that was first published in 1849. In it, Thoreau argues that individuals should not permit governments to overrule or atrophy their consciences, and that...
+                        </div>
+                        <div class="backGoto">
+                            <a href="https://en.wikipedia.org/wiki/Civil_Disobedience_(Thoreau)" target="_blank" title="Civil Disobedience by Thoreau">Civil Disobedience by Thoreau →</a>
+                        </div>
+                    </div>
+                </div><!-- end of Civil Disobedience by Henry David Thoreau -->
+                <!-- start of Ishmael by Daniel Quinn -->
+                <div class="hover panel" onmouseout="javascript:this.className = 'hover panel';" onmouseover="javascript:this.className += ' flip';">
+                    <div class="front">
+                        <div class="frontTitle">
+                            Ishmael
+                        </div>
+                        <div class="frontLogo danielquinn_ishmael bookBgImg"></div>
+                        <div class="frontLocation">
+                            Daniel Quinn
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="backTitle">
+                            Ishmael by Quinn
+                        </div>
+                        <div class="backParagraph">
+                            Ishmael is a 1992 philosophical novel by Daniel Quinn. It examines the mythological thinking at the heart of modern civilization, its effect on ethics, and how this relates to sustainability and societal collapse on the global scale. The novel uses a style of Socratic dialogue to deconstruct the notion that humans are the pinnacle of biological evolution....
+                        </div>
+                        <div class="backGoto">
+                            <a href="https://en.wikipedia.org/wiki/Ishmael_(novel)" target="_blank" title="Ishmael by Daniel Quinn">Ishmael by Quinn →</a>
+                        </div>
+                    </div>
+                </div><!-- end of The Catcher in the Rye by Daniel Quinn -->
+                <!-- start of The Case for Christ by Lee Strobel -->
+                <div class="hover panel" onmouseout="javascript:this.className = 'hover panel';" onmouseover="javascript:this.className += ' flip';">
+                    <div class="front">
+                        <div class="frontTitle">
+                            The Case for Christ
+                        </div>
+                        <div class="frontLogo the_case_for_christ bookBgImg"></div>
+                        <div class="frontLocation">
+                            Lee Strobel
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="backTitle">
+                            The Case for Christ by Lee Strobel
+                        </div>
+                        <div class="backParagraph">
+                            The book summarizes his interviews with thirteen evangelical Christian scholars... ...in which they defend their views regarding the historical reliability of the New Testament... ...personal experience while encountering these scholars and their beliefs was portrayed in the 2017 drama film of the same name....
+                        </div>
+                        <div class="backGoto">
+                            <a href="https://en.wikipedia.org/wiki/Lee_Strobel#The_Case_for_Christ" target="_blank" title="The Case for Christ by Lee Strobel">The Case for Christ... by Lee Strobel →</a>
+                        </div>
+                    </div>
+                </div><!-- end of The Case for Christ by Lee Strobel -->
+            </div>
+            <!-- ending of our books listing -->
+            
+        </section>
+        
+        <footer>
+            <h4>
+                this is the footer
+            </h4>
+            <p>
+                we place redundant information here
+            </p>
+            <div id="footerTagLine">
+                I am 7 inches left of normal
+            </div>
+        </footer>
+    </body>
+</html>
